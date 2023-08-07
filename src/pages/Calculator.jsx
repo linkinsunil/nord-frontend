@@ -13,7 +13,7 @@ const Calculator = () => {
 
   const handleSubmit = async () => {
     try {
-      const res = await axios.post(`http://localhost:8000/${operation}`, {
+      const res = await axios.post(`https://nord-api.vercel.app/${operation}`, {
         num1: Number(num1),
         num2: Number(num2),
       });
