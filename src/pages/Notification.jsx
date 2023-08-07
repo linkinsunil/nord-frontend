@@ -17,13 +17,13 @@ const Notification = () => {
       <div className='flex flex-1 flex-col items-center justify-center'>
         <button
           onClick={handleClick}
-          className='transition ease-in-out delay-150 px-3 py-2 bg-red-600 hover:bg-red-500 text-2xl font-bold text-white shadow-gray-950 shadow-2xl'
+          className='px-3 py-2 bg-red-600 hover:bg-red-500 text-2xl font-bold text-white shadow-2xl'
         >
           Notify Me!
         </button>
 
         {showNotification && (
-          <div className='absolute px-3 py-2 rounded-md bg-blue-500 text-white font-semibold top-2 '>
+          <div className='absolute px-3 py-2 rounded-md bg-blue-500 text-white font-semibold top-2 shadow-gray-950 shadow-2xl'>
             You've been notified successfully!
           </div>
         )}

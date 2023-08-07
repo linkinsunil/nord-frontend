@@ -34,14 +34,14 @@ const Calculator = () => {
           <div className='flex w-full flex-wrap'>
             <input
               type='number'
-              className='w-24 py-2 px-1 outline-none m-2'
+              className='w-24 py-2 px-2 outline-none m-2'
               placeholder='Enter #1'
               value={num1}
               onChange={e => setNum1(e.target.value)}
             />
             <input
               type='number'
-              className='w-24 py-2 px-1 outline-none m-2'
+              className='w-24 py-2 px-2 outline-none m-2'
               placeholder='Enter #2'
               value={num2}
               onChange={e => setNum2(e.target.value)}

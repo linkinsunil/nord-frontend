@@ -44,7 +44,7 @@ const Text = () => {
     <div className='bg-gray-200 w-full flex'>
       <Sidebar />
       <div className='flex flex-1 flex-col items-center justify-center'>
-        <div className='flex'>
+        <div className='flex mb-4 shadow-2xl'>
           <input
             type='text'
             placeholder='Type something...'

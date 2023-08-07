@@ -42,7 +42,7 @@ const Image = () => {
         <input type='file' onChange={e => setImageUpload(e.target.files[0])} />
 
         <button
-          className='bg-teal-600 text-white font-semibold px-3 w-fit py-2 my-2 rounded-md hover:bg-teal-700'
+          className='bg-teal-600 text-white font-semibold px-3 w-fit py-2 my-2 rounded-md hover:bg-teal-700 shadow-2xl'
           onClick={addImage}
         >
           Add Image
@@ -50,7 +50,12 @@ const Image = () => {
 
         <div className='flex flex-wrap gap-2'>
           {imageList.map((url, i) => (
-            <img key={i} src={url} alt='' className='w-20 h-24 object-cover' />
+            <img
+              key={i}
+              src={url}
+              alt=''
+              className='shadow-md shadow-gray-500 rounded-lg w-20 h-24 object-cover'
+            />
           ))}
         </div>
       </div>
