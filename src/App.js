@@ -5,12 +5,10 @@ import Image from './pages/Image';
 import Text from './pages/Text';
 import Calculator from './pages/Calculator';
 import { Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
 
 function App() {
   return (
     <div className='bg-gray-200 flex'>
-      <Sidebar />
       <Routes>
         <Route path='/' element={<Signup />} />
         <Route path='/notification' element={<Notification />} />

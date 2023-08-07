@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { getDownloadURL, listAll, ref, uploadBytes } from 'firebase/storage';
 import { storage } from '../firebase';
+import Sidebar from '../components/Sidebar';
 
 const Image = () => {
   const [imageUpload, setImageUpload] = useState(null);
@@ -35,20 +36,23 @@ const Image = () => {
   }, []);
 
   return (
-    <div className='bg-gray-200 w-full flex flex-col p-4'>
-      <input type='file' onChange={e => setImageUpload(e.target.files[0])} />
+    <div className='bg-gray-200 w-full flex'>
+      <Sidebar />
+      <div className='flex flex-1 flex-col items-center justify-center'>
+        <input type='file' onChange={e => setImageUpload(e.target.files[0])} />
 
-      <button
-        className='bg-teal-600 text-white font-semibold px-3 w-fit py-2 my-2 rounded-md hover:bg-teal-700'
-        onClick={addImage}
-      >
-        Add Image
-      </button>
+        <button
+          className='bg-teal-600 text-white font-semibold px-3 w-fit py-2 my-2 rounded-md hover:bg-teal-700'
+          onClick={addImage}
+        >
+          Add Image
+        </button>
 
-      <div className='flex flex-wrap gap-2'>
-        {imageList.map((url, i) => (
-          <img key={i} src={url} alt='' className='w-20 h-24 object-cover' />
-        ))}
+        <div className='flex flex-wrap gap-2'>
+          {imageList.map((url, i) => (
+            <img key={i} src={url} alt='' className='w-20 h-24 object-cover' />
+          ))}
+        </div>
       </div>
     </div>
   );

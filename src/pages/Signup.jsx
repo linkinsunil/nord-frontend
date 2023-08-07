@@ -38,11 +38,11 @@ const Signup = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    values.email && values.password && navigate('/home');
+    values.email && values.password && navigate('/notification');
   };
 
   return (
-    <div className='bg-gray-200 flex items-center justify-center h-screen'>
+    <div className='bg-gray-200 flex items-center justify-center h-screen w-full'>
       <div className='flex flex-col bg-white w-80 text-center p-8 rounded-2xl'>
         <p className='font-bold text-4xl text-black font-montserrat mb-2'>
           Sign Up

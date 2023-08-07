@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { collection, addDoc, getDocs } from 'firebase/firestore';
 import { db } from '../firebase';
+import Sidebar from '../components/Sidebar';
 
 const Text = () => {
   const [text, setText] = useState('');
@@ -40,30 +41,33 @@ const Text = () => {
   console.log('All-TEXT', allText);
 
   return (
-    <div className='bg-gray-200 w-full flex flex-col items-center justify-center '>
-      <div className='flex'>
-        <input
-          type='text'
-          placeholder='Type something...'
-          onChange={e => setText(e.target.value)}
-          className='px-3 py-2 outline-none'
-          value={text}
-        />
+    <div className='bg-gray-200 w-full flex'>
+      <Sidebar />
+      <div className='flex flex-1 flex-col items-center justify-center'>
+        <div className='flex'>
+          <input
+            type='text'
+            placeholder='Type something...'
+            onChange={e => setText(e.target.value)}
+            className='px-3 py-2 outline-none'
+            value={text}
+          />
 
-        <button
-          type='submit'
-          className='bg-black hover:bg-gray-900 text-white px-3 py-2'
-          onClick={addText}
-        >
-          Send
-        </button>
+          <button
+            type='submit'
+            className='bg-black hover:bg-gray-900 text-white px-3 py-2'
+            onClick={addText}
+          >
+            Send
+          </button>
+        </div>
+
+        <ol className='list-disc'>
+          {allText?.map((text, i) => (
+            <li key={i}>{text.text}</li>
+          ))}
+        </ol>
       </div>
-
-      <ol className='list-disc'>
-        {allText?.map((text, i) => (
-          <li key={i}>{text.text}</li>
-        ))}
-      </ol>
     </div>
   );
 };
